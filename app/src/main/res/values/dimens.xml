@@ -1,0 +1,50 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="new_user_card_view_height">250dp</dimen>
+    <dimen name="new_user_card_view_width">315dp</dimen>
+
+    <!-- Users screen -->
+    <dimen name="card_view_elevation">10dp</dimen>
+    <dimen name="card_view_cardCornerRadius">7dp</dimen>
+    <dimen name="new_user_tv_margin">25dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="child_list_left_margin">54dp</dimen>
+    <dimen name="logo_height">194px</dimen>
+    <dimen name="welcome_tv_margin">32dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="child_name_bt_width">252dp</dimen>
+    <dimen name="child_name_bt_height">48dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!-- Levels grid layout -->
+    <dimen name="levels_grid_list_height">364dp</dimen>
+    <dimen name="levels_grid_list_width">269dp</dimen>
+    <dimen name="levels_grid_list_left_margin">46dp</dimen>
+    <dimen name="levels_grid_list_top_margin">138dp</dimen>
+
+    <dimen name="levels_grid_list_item_height">75dp</dimen>
+    <dimen name="levels_grid_list_item_width">75dp</dimen>
+    <dimen name="levels_grid_list_spacing">20dp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">8dp</dimen>
+
+    <!-- lock dimensions -->
+    <!--ldpi 89dp -> 66.75px
+    mdpi 89dp -> 89 px
+    hdpi 89dp -> 133.5px
+    xhdpi 89dp -> 178px
+    xxhdpi 89dp -> 267px
+    xxxhdpi 89dp ->356px-->
+
+    <!--level up custom dialog -->
+    <dimen name="level_up_dialog_arrow_img_width">150dp</dimen>
+    <dimen name="level_up_dialog_arrow_img_height">150dp</dimen>
+
+</resources>
