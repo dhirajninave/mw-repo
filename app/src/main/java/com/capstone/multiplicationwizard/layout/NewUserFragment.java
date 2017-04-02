@@ -2,6 +2,7 @@ package com.capstone.multiplicationwizard.layout;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -55,17 +56,28 @@ public class NewUserFragment extends Fragment {
                     String newUserName = tvNewUser.getText().toString();
                     contentValues.put(MWSQLiteHelper.KEY_USERNAME, newUserName);
                     contentValues.put(MWSQLiteHelper.KEY_LEVEL,1);
-                    Uri id = mainActivity.getContentResolver().insert(MWItemsContract.USERS_CONTENT_URI, contentValues);
-                    Log.e("NewUserFragment", "createUSer returned id:" + id);
-                    //Launch GameActivity
-                    Intent intent = new Intent(mainActivity.getApplicationContext(), GameActivity.class);
-                    User newUser = new User();
-                    newUser.setUsername(newUserName);
-                    newUser.setMaxLevel(1);
-                    newUser.setHighScore(0);
-                    newUser.setId(id.toString());
-                    intent.putExtra("com.capstone.multiplicationwizard.model.user", newUser);
-                    startActivity(intent);
+                    Uri id = null;
+                    try {
+                        id = mainActivity.getContentResolver().insert(MWItemsContract.USERS_CONTENT_URI, contentValues);
+                    } catch (Exception e) {
+                        Toast.makeText(getContext(), R.string.unique_user_err, Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    finally
+                    {
+                        //Launch GameActivity
+                        if (id != null) {
+                            Log.d("NewUserFragment", "createUSer returned id:" + id);
+                            Intent intent = new Intent(mainActivity.getApplicationContext(), GameActivity.class);
+                            User newUser = new User();
+                            newUser.setUsername(newUserName);
+                            newUser.setMaxLevel(1);
+                            newUser.setHighScore(0);
+                            newUser.setId(id.toString());
+                            intent.putExtra("com.capstone.multiplicationwizard.model.user", newUser);
+                            startActivity(intent);
+                        }
+                    }
                 }
                 return;
             }

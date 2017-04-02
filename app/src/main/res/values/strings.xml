@@ -15,4 +15,7 @@
     <string name="dialog_continue_str">Your score is </string>
     <string name="dialog_play_again_str">Hey Wizard! Need to score 80pts to level up. Try again!"</string>
     <string name="dialog_level_up_str">Level Up!</string>
+
+    <!--errors-->
+    <string name="unique_user_err">Same user exists. Try again!</string>
 </resources>
